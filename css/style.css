@@ -1,0 +1,766 @@
+/* =========================
+   CONFIGURACION GENERAL
+========================= */
+
+:root {
+    --azul-oscuro: #061d3b;
+    --azul-principal: #0759b8;
+    --azul-claro: #36a2ff;
+    --blanco: #ffffff;
+    --gris: #f3f7fc;
+    --texto: #102b4e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--gris);
+    color: var(--texto);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   DISTRIBUCION PRINCIPAL
+========================= */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   PANEL LATERAL
+========================= */
+
+.sidebar {
+    width: 310px;
+    min-width: 310px;
+    background: linear-gradient(
+        180deg,
+        #061d3b,
+        #032c5d
+    );
+
+    color: white;
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.brand {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #24517e;
+}
+
+.logo {
+    width: 150px;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.brand h1 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #b9d9ff;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-box {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #285a8d;
+    border-radius: 18px;
+    padding: 25px 18px;
+    margin-top: 30px;
+}
+
+.login-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.login-title i {
+    font-size: 23px;
+    color: var(--azul-claro);
+}
+
+.login-title h3 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-description {
+    text-align: center;
+    font-size: 12px;
+    color: #b9d9ff;
+    margin: 15px 0 20px;
+}
+
+.input-group-custom {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 13px;
+    padding: 0 12px;
+}
+
+.input-group-custom i {
+    color: var(--azul-principal);
+    font-size: 15px;
+}
+
+.input-group-custom input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 13px 10px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(
+        90deg,
+        #0874df,
+        #36a2ff
+    );
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #00000030;
+}
+
+#mensajeLogin {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+    color: #b9d9ff;
+}
+
+.sidebar-footer i {
+    font-size: 35px;
+    color: var(--azul-claro);
+}
+
+.sidebar-footer p {
+    font-style: italic;
+    margin: 0;
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    background: #f5f8fd;
+}
+
+
+/* =========================
+   MENU SUPERIOR
+========================= */
+
+.navbar-custom {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    background: white;
+    border-bottom: 1px solid #dce6f3;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 24px 0;
+    transition: 0.3s;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--azul-principal);
+    border-bottom: 3px solid var(--azul-principal);
+}
+
+.company-logo {
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--azul-oscuro);
+}
+
+.company-logo span {
+    border-bottom: 3px solid var(--azul-claro);
+}
+
+
+/* =========================
+   PRESENTACION
+========================= */
+
+.hero {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.hero-content {
+    width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label {
+    color: var(--azul-principal);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: 78px;
+    font-weight: 900;
+    color: var(--azul-oscuro);
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.title-line {
+    width: 130px;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--azul-principal),
+        var(--azul-claro)
+    );
+
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.hero h3 {
+    font-size: 27px;
+    font-weight: 800;
+    max-width: 600px;
+    line-height: 1.3;
+}
+
+.hero-content p {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #ffffff00 25%
+        ),
+        url("../img/maquinaria.jpg");
+
+    background-position: center;
+    background-size: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #0759b820
+    );
+}
+
+
+/* =========================
+   ENCABEZADOS
+========================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(
+        90deg,
+        var(--azul-oscuro),
+        var(--azul-principal)
+    );
+
+    color: white;
+    padding: 13px 20px;
+    border-radius: 12px 12px 12px 0;
+    width: fit-content;
+    min-width: 240px;
+    margin-bottom: 22px;
+}
+
+.section-heading i {
+    font-size: 21px;
+}
+
+.section-heading h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* =========================
+   DESCRIPCION
+========================= */
+
+.section-description,
+.section-functions,
+.section-benefits {
+    padding: 35px;
+}
+
+.description-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #183a6410;
+    border: 1px solid #e4edf8;
+}
+
+.description-icon {
+    min-width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf3ff;
+    border-radius: 50%;
+    color: var(--azul-principal);
+}
+
+.description-icon i {
+    font-size: 60px;
+}
+
+.description-text p {
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   FUNCIONES
+========================= */
+
+.functions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.function-card {
+    background: white;
+    border: 1px solid #e4edf8;
+    border-radius: 15px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px #183a6410;
+    transition: 0.3s;
+}
+
+.function-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #183a6420;
+}
+
+.function-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(
+        135deg,
+        var(--azul-oscuro),
+        var(--azul-principal)
+    );
+
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.function-icon i {
+    font-size: 28px;
+}
+
+.function-card h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.function-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #526780;
+}
+
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.section-benefits {
+    background: white;
+    margin: 0 35px;
+    border-radius: 15px;
+    border: 1px solid #e4edf8;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-right: 1px solid #dce6f3;
+}
+
+.benefit i {
+    font-size: 28px;
+    color: var(--azul-principal);
+}
+
+.benefit span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   CONTACTOS
+========================= */
+
+.section-contact {
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.section-contact h3 {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+}
+
+.section-contact p {
+    margin-top: 10px;
+    color: #526780;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.contact-info span {
+    font-size: 14px;
+}
+
+.contact-info i {
+    color: var(--azul-principal);
+    margin-right: 8px;
+}
+
+
+/* =========================
+   BOTON CONTINUAR
+========================= */
+
+.continue-section {
+    text-align: center;
+    padding: 35px;
+    background: linear-gradient(
+        120deg,
+        #061d3b,
+        #0759b8
+    );
+
+    color: white;
+}
+
+.continue-section p {
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.btn-continue {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 55px;
+    border-radius: 50px;
+    background: white;
+    color: var(--azul-oscuro);
+    font-weight: 800;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.btn-continue:hover {
+    background: var(--azul-claro);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PIE DE PAGINA
+========================= */
+
+.footer {
+    background: #03152d;
+    color: #b9d9ff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
+    }
+
+    .hero {
+        padding: 30px;
+    }
+
+    .hero h2 {
+        font-size: 60px;
+    }
+
+    .hero h3 {
+        font-size: 22px;
+    }
+
+    .functions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .logo {
+        width: 100px;
+        height: 90px;
+    }
+
+    .login-box {
+        max-width: 400px;
+        margin: 25px auto;
+        width: 100%;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .navbar-custom {
+        padding: 15px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .company-logo {
+        font-size: 24px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 30px 20px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 55px;
+    }
+
+    .hero h3 {
+        font-size: 23px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 220px;
+        top: auto;
+        bottom: 0;
+        opacity: 0.35;
+    }
+
+    .section-description,
+    .section-functions,
+    .section-benefits {
+        padding: 25px 15px;
+    }
+
+    .description-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .functions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-benefits {
+        margin: 0 15px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit {
+        border-right: none;
+        border-bottom: 1px solid #dce6f3;
+    }
+
+    .section-contact {
+        padding: 30px 15px;
+    }
+
+}
